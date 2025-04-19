@@ -4,63 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PhoneDB – Support</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Inter', system-ui, sans-serif;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: center;
+    :root {
+      --bg: #000;
+      --fg: #fff;
+      --fg-muted: rgba(255, 255, 255, 0.7);
+      --primary: #1e90ff;
+      --max-width: 600px;
+      --gap: 1.5rem;
+      --radius: 8px;
     }
 
-    .container {
-      margin-top: 15vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: var(--gap);
+    }
+
+    .card {
+      max-width: var(--max-width);
+      width: 100%;
+      padding: var(--gap);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      display: grid;
+      gap: var(--gap);
     }
 
     h1 {
-      font-size: 2.6rem;
       font-weight: 300;
-      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      letter-spacing: 0.5px;
     }
 
     p {
-      font-size: 1rem;
-      margin: 0.25rem;
       font-weight: 300;
+      opacity: 0.9;
     }
 
     .email {
+      color: var(--primary);
+      font-weight: 600;
+      opacity: 1;
+      text-decoration: none;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .email:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: var(--gap) 0;
+    }
+
+    h2 {
+      font-size: 1.4rem;
       font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    section p {
+      margin-top: 0.5rem;
       opacity: 0.85;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>PhoneDB</h1>
-    <p>For support, contact:</p>
-    <p class="email">support@iphonehobby.com</p>
+  <div class="card">
+    <div>
+      <h1>PhoneDB</h1>
+      <p>For support, contact:</p>
+      <a href="mailto:support@iphonehobby.com" class="email">
+        support@iphonehobby.com
+      </a>
+    </div>
+
+    <hr />
+
+    <section>
+      <h2>Privacy Policy</h2>
+      <p>This app does not collect, store, or share any personal data.</p>
+      <p>
+        All data entered into the app stays on your device and is never
+        uploaded or shared externally. No tracking, analytics, or advertising
+        technologies are used.
+      </p>
+      <p>
+        If you have any questions about this privacy policy, please contact us
+        at
+        <a href="mailto:support@iphonehobby.com" class="email">
+          support@iphonehobby.com
+        </a>.
+      </p>
+    </section>
   </div>
-
-  <hr style="margin: 3rem auto; width: 80%; opacity: 0.1;" />
-
-<section style="max-width: 600px;">
-  <h2 style="font-weight: 300; font-size: 1.4rem; margin-bottom: 1rem;">Privacy Policy</h2>
-  <p>This app does not collect, store, or share any personal data.</p>
-  <p>All data entered into the app stays on your device and is never uploaded or shared externally. No tracking, analytics, or advertising technologies are used.</p>
-  <p>If you have any questions about this privacy policy, please contact us at <span style="opacity: 0.85;">support@iphonehobby.com</span>.</p>
-</section>
-
-  
 </body>
 </html>
